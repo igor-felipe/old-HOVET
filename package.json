@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "nodemon src/main.ts",
+    "start": "nodemon src/app.ts",
     "predev": "npm run swagger",
     "prebuild": "npm run swagger",
     "build": "tsc --project ./",
@@ -55,7 +55,7 @@
       "src"
     ],
     "ext": "ts",
-    "exec": "ts-node src/main.ts"
+    "exec": "ts-node src/app.ts"
   },
   "lint-staged": {
     "*.ts": "eslint --cache --fix"

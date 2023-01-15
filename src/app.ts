@@ -1,7 +1,7 @@
-import { PORT } from "./config/env";
 import express, { Application, Request, Response } from "express";
 import morgan from "morgan";
 import swaggerUi from "swagger-ui-express";
+import { PORT } from "./config/env";
 
 import Router from "./routes";
 
@@ -20,7 +20,7 @@ app.use(
     swaggerOptions: {
       url: "/swagger.json",
     },
-  })
+  }),
 );
 
 app.use(Router);
