@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
-import { Stages } from "../helpers/constants/stages";
+import Stages from "../helpers/constants/stages";
+
 dotenv.config();
 
 const { PORT, SELF_BASE_URL } = process.env;
