@@ -1,7 +1,7 @@
 import express, { Application } from "express";
 import morgan from "morgan";
 import swaggerUi from "swagger-ui-express";
-import Router from "./routes";
+import { RegisterRoutes } from "../public/routes";
 
 const app: Application = express();
 
@@ -19,6 +19,6 @@ app.use(
   }),
 );
 
-app.use(Router);
+RegisterRoutes(app);
 
 export default app;

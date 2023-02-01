@@ -7,7 +7,7 @@
     "predev": "npm run swagger",
     "prebuild": "npm run swagger",
     "build": "tsc --project ./",
-    "dev": "concurrently \"nodemon\" \"nodemon -x tsoa spec\"",
+    "dev": "concurrently \"nodemon\" \"nodemon -x tsoa spec-and-routes\"",
     "swagger": "tsoa spec",
     "prepare": "husky install",
     "commit": "git-cz"
