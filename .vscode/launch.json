@@ -5,14 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "node",
+            "name": "Debug",
             "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceFolder}/src/app.ts",
-            "preLaunchTask": "tsc: build - tsconfig.json",
-            "outFiles": [
-                "${workspaceFolder}/dist/**/*.js"
-            ]
+            "runtimeArgs": [
+                "run-script",
+                "debug"
+            ],
+            "runtimeExecutable": "npm",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
         }
     ]
 }
