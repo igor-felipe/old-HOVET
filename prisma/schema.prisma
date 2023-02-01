@@ -25,7 +25,6 @@ model User {
   cpf                  String                 @unique
   name                 String
   status               String // active, inactive
-  salt                 String
   token                String
   lastLogin            DateTime?
   createdAt            DateTime               @default(now())
@@ -120,13 +119,13 @@ model Animal {
   consultation         Consultation[]
   laboratoryExamReport LaboratoryExamReport[]
   imageExamReport      ImageExamReport[]
-  necropsy necropsy[]
+  necropsy             necropsy[]
 
   lastModifiedDate DateTime @updatedAt
   notedBy          String
 
-  species  Species    @relation(fields: [speciesId], references: [id])
-  user     User       @relation(fields: [notedBy], references: [id])
+  species Species @relation(fields: [speciesId], references: [id])
+  user    User    @relation(fields: [notedBy], references: [id])
 
   @@map("animal")
 }
