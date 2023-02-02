@@ -2,7 +2,7 @@ import express, { Application } from "express";
 import morgan from "morgan";
 import swaggerUi from "swagger-ui-express";
 import helmet from "helmet";
-import routes from "./routes";
+import { RegisterRoutes } from "../public/routes";
 
 const app: Application = express();
 
@@ -20,6 +20,6 @@ app.use(
   }),
 );
 
-app.use(routes);
+RegisterRoutes(app);
 
 export default app;
