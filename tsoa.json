@@ -5,6 +5,12 @@
     "src/**/*Controller.ts"
   ],
   "spec": {
+    "tags": [
+      {
+        "name": "User",
+        "description": "Operations about users"
+      }
+    ],
     "outputDirectory": "public",
     "specVersion": 3
   },

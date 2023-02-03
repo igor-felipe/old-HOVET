@@ -11,6 +11,7 @@ import {
   Route,
   SuccessResponse,
   Request,
+  Tags,
 } from "tsoa";
 import {
   update,
@@ -23,6 +24,7 @@ import {
 } from "../services/userService";
 
 @Route("users")
+@Tags("User")
 export class UserController extends Controller {
   @Get("/getAll")
   public async getAll() {
