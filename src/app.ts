@@ -3,6 +3,7 @@ import morgan from "morgan";
 import swaggerUi from "swagger-ui-express";
 import helmet from "helmet";
 import { RegisterRoutes } from "../public/routes";
+import errorHandler from "./exceptions/errorHandler";
 
 const app: Application = express();
 
@@ -21,5 +22,6 @@ app.use(
 );
 
 RegisterRoutes(app);
+app.use(errorHandler);
 
 export default app;
