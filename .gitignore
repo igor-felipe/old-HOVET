@@ -3,3 +3,5 @@ dist/
 .env
 .eslintcache
 dev.db
+public/routes.ts
+public/swagger.json
