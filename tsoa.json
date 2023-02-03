@@ -12,9 +12,17 @@
       }
     ],
     "outputDirectory": "public",
-    "specVersion": 3
+    "specVersion": 3,
+    "securityDefinitions": {
+      "jwt": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
   },
   "routes": {
-    "routesDir": "public"
+    "routesDir": "public",
+    "authenticationModule": "./src/config/authentication.ts"
   }
 }
