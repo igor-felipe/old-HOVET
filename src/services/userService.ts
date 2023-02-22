@@ -9,10 +9,7 @@ const saltRounds = 12;
 
 const prisma = new PrismaClient();
 
-export type UserWithoutPassword = Omit<
-  User,
-  "password" | "token" | "lastLogin"
->;
+export type UserWithoutPassword = Omit<User, "password">;
 export type UserCreateParams = Pick<
   User,
   "password" | "email" | "cpf" | "name"
@@ -52,8 +49,6 @@ export const userValidator = z.object({
     .max(100, { message: "very long name" }),
   // @ts-ignore
   status: z.enum(Object.keys(userStatus), { message: "Invalid User Status" }),
-  token: z.string(),
-  lastLogin: z.date(),
   createdAt: z.date(),
   notedBy: z.string(),
 });
@@ -126,7 +121,6 @@ export async function create(
       cpf,
       name,
       status: userStatus.activated,
-      token: "token",
       notedBy,
     },
     select: selectUserWithoutPassword,
