@@ -8,7 +8,7 @@
     "prebuild": "npm run swagger",
     "build": "tsc --project ./",
     "dev": "concurrently \"nodemon\" \"nodemon -x tsoa spec-and-routes\"",
-    "debug": "nodemon --inspect src/server.ts",
+    "debug": "concurrently \"nodemon --inspect src/server.ts \" \"nodemon -x tsoa spec-and-routes\"",
     "swagger": "tsoa spec",
     "prepare": "husky install",
     "commit": "git-cz"
